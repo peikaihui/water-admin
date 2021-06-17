@@ -1,6 +1,14 @@
 import fs from 'fs';
 import path from 'path';
 import dotenv from 'dotenv';
+import { argv } from 'yargs';
+
+export interface ArgvType {
+  [x: string]: unknown;
+  _: (string | number)[];
+  $0: string;
+  mode?: string;
+}
 
 export interface ViteEnv {
   VITE_PORT: number;
@@ -13,6 +21,8 @@ export interface ViteEnv {
   VITE_PREFIX: string;
   VITE_OUTPUT_DIR: string;
 }
+
+export const envDir = `${process.cwd()}/build/env`;
 
 // Read all environment variable configuration files to process.env
 export function wrapperEnv(envConf: any): ViteEnv {
@@ -35,12 +45,16 @@ export function wrapperEnv(envConf: any): ViteEnv {
  * @param match prefix
  * @param confFiles ext
  */
-export function getEnvConfig(match = 'VITE_APP_', confFiles = ['.env', '.env.test', '.env.production']) {
+const confFiles = {
+  test: ['.env.test', '.env.test.local'],
+  production: ['.env.production', '.env.production.local'],
+}
+export function getEnvConfig(match = 'VITE_') {
   let envConfig = {};
-  confFiles.forEach((item) => {
+  const mode = (argv as ArgvType).mode || 'test';
+  confFiles[mode].forEach((item) => {
     try {
-      const env = dotenv.parse(fs.readFileSync(path.resolve(process.cwd(), item)));
-
+      const env = dotenv.parse(fs.readFileSync(path.resolve(envDir, item)));
       envConfig = { ...envConfig, ...env };
     } catch (error) {}
   });
@@ -65,3 +79,9 @@ export function getCwdPath(...dir: string[]) {
 export function pathResolve(dir: string) {
   return path.resolve(__dirname, '../', dir);
 }
+
+export const getShortName = () => {
+  return `__PRODUCTION____APP__CONF__`
+    .toUpperCase()
+    .replace(/\s/g, '');
+};

@@ -3,12 +3,11 @@ import type { UserConfig, ConfigEnv } from 'vite';
 import { loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
-import { wrapperEnv, pathResolve } from './utils';
+import { wrapperEnv, pathResolve, envDir } from './utils';
 
 // https://cn.vitejs.dev/config/
 export default ({ mode }: ConfigEnv): UserConfig => {
   const root = process.cwd();
-  const envDir = `${root}/build/env`;
 
   const env = loadEnv(mode, envDir);
   const {
@@ -30,10 +29,10 @@ export default ({ mode }: ConfigEnv): UserConfig => {
     },
     resolve: {
       alias: [
-        {
-          find: /^vue$/,
-          replacement: 'https://esm.sh/vue@next',
-        },
+        // {
+        //   find: /^vue$/,
+        //   replacement: 'https://esm.sh/vue@next',
+        // },
         {
           // @@xxxx  =>  src/xxx
           find: /^\@@/,
