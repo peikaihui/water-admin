@@ -30,7 +30,6 @@
     "dotenv": "^10.0.0",
     "esno": "^0.7.3",
     "husky": "^6.0.0",
-    "lint-staged": "^11.0.0",
     "typescript": "^4.3.2",
     "vite": "^2.3.7",
     "vite-plugin-compression": "^0.2.5",
@@ -48,14 +47,6 @@
     "cz-customizable": {
       "config": "./node_modules/@fe6/norm/src/.cz-configrc.js"
     }
-  },
-  "lint-staged": {
-    "src/**/*.{js,ts,tsx,vue,md}": [
-      "nr lint:js"
-    ],
-    "src/**/*.{scss,vue}": [
-      "nr lint:css"
-    ]
   },
   "engines": {
     "node": ">=16.0.0"
