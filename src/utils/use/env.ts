@@ -1,6 +1,6 @@
 /** @format */
 
-import type { EnvConfig } from '@@types/config';
+import type { EnvConfig } from './types/config';
 
 /**
  * Get the global configuration (the configuration will be extracted independently when packaging)

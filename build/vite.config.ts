@@ -1,26 +1,28 @@
 import type { UserConfig, ConfigEnv } from 'vite';
 
 import { loadEnv } from 'vite'
-import vue from '@vitejs/plugin-vue'
 
 import { wrapperEnv, pathResolve, envDir } from './utils';
+import { createVitePlugins } from './plugins';
 
 // https://cn.vitejs.dev/config/
-export default ({ mode }: ConfigEnv): UserConfig => {
+export default ({ command, mode }: ConfigEnv): UserConfig => {
   const root = process.cwd();
 
   const env = loadEnv(mode, envDir);
+  const viteEnv = wrapperEnv(env);
   const {
     VITE_PORT,
     VITE_PUBLIC_PATH,
     VITE_DROP_CONSOLE,
     VITE_OUTPUT_DIR,
-  } = wrapperEnv(env);
+  } = viteEnv;
+  const isBuild = command === 'build';
 
   return {
     base: VITE_PUBLIC_PATH,
     root,
-    plugins: [vue()],
+    plugins: createVitePlugins(viteEnv, isBuild),
     server: {
       port: VITE_PORT || 3000,
       hmr: {
@@ -42,6 +44,11 @@ export default ({ mode }: ConfigEnv): UserConfig => {
           // ~assets/xxxx  =>  src/assets/xxx
           find: /^\~assets/,
           replacement: `${pathResolve('src')}/assets`,
+        },
+        {
+          // ~assets/xxxx  =>  src/assets/xxx
+          find: /^\~utils/,
+          replacement: `${pathResolve('src')}/utils`,
         },
       ],
     },
@@ -65,6 +72,9 @@ export default ({ mode }: ConfigEnv): UserConfig => {
       //   ],
       // }
     // }
+    // optimizeDeps: {
+    //   exclude: ['@fe6/water-pro', '@babel/runtime']
+    // },
   }
 };
 

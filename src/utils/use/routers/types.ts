@@ -12,91 +12,91 @@ export type Component<T extends any = any> =
 
 export interface RouteMeta {
   // title
-  title: string;
-  titleTips?: string | string[];
-  titleTipsStyle?: object;
+  title: string
+  titleTips?: string | string[]
+  titleTipsStyle?: object
   // Whether to ignore permissions
-  ignoreAuth?: boolean;
+  ignoreAuth?: boolean
   // role info
   // roles?: RoleEnum[];
   // Whether not to cache
-  ignoreKeepAlive?: boolean;
+  ignoreKeepAlive?: boolean
   // Is it fixed on tab
-  affix?: boolean;
+  affix?: boolean
   // icon on tab
-  icon?: string;
+  icon?: string
   // 控制显示左侧菜单上
-  navDisplay?: boolean;
+  navDisplay?: boolean
   // 有此参数，忽略 children 字段，只有一个左边导航
-  topMenu?: boolean;
+  topMenu?: boolean
   // 指定子级的跳转路径 tag
-  redirectName?: string;
+  redirectName?: string
 
-  frameSrc?: string;
+  frameSrc?: string
 
-  loading?: boolean;
+  loading?: boolean
 
   // 隐藏右边的标题
-  hideTitle?: boolean;
+  hideTitle?: boolean
 
   // current page transition
-  transitionName?: string;
+  transitionName?: string
 
   // Carrying parameters
-  carryParam?: boolean;
+  carryParam?: boolean
 
   // Used internally to mark single-level menus
-  single?: boolean;
+  single?: boolean
 
   // Never show in tab
-  hideTab?: boolean;
+  hideTab?: boolean
 
   // Never show in menu
-  hideMenu?: boolean;
+  hideMenu?: boolean
 }
 
 // @ts-ignore
 export interface AppRouteRecordRaw extends Omit<RouteRecordRaw, 'meta'> {
-  name: string;
-  meta: RouteMeta;
-  component?: Component | string;
-  components?: Component;
-  children?: AppRouteRecordRaw[];
-  props?: Recordable;
-  fullPath?: string;
+  name: string
+  meta: RouteMeta
+  component?: Component | string
+  components?: Component
+  children?: AppRouteRecordRaw[]
+  props?: Recordable
+  fullPath?: string
 }
 
 export interface MenuTag {
-  type?: 'primary' | 'error' | 'warn' | 'success';
-  content?: string;
-  dot?: boolean;
+  type?: 'primary' | 'error' | 'warn' | 'success'
+  content?: string
+  dot?: boolean
 }
 
 export interface Menu {
-  name: string;
+  name: string
 
-  icon?: string;
+  icon?: string
 
-  path: string;
+  path: string
 
-  disabled?: boolean;
+  disabled?: boolean
 
-  children?: Menu[];
+  children?: Menu[]
 
-  orderNo?: number;
+  orderNo?: number
 
   // roles?: RoleEnum[];
 
-  meta?: Partial<RouteMeta>;
+  meta?: Partial<RouteMeta>
 
-  tag?: MenuTag;
+  tag?: MenuTag
 
-  hideMenu?: boolean;
+  hideMenu?: boolean
 }
 
 export interface MenuModule {
-  orderNo?: number;
-  menu: Menu;
+  orderNo?: number
+  menu: Menu
 }
 
 // export type AppRouteModule = RouteModule | AppRouteRecordRaw;
