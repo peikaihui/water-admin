@@ -31,8 +31,6 @@ function createConfig(
 
     console.log(chalk.cyan(`\n✨ [${pkg.name}]`) + ` - 配置文件打包成功:`);
     console.log(chalk.gray(VITE_OUTPUT_DIR + '/' + chalk.green(configFileName)) + '\n');
-
-    console.log(config, 'config');
   } catch (error) {
     console.log(chalk.red(`[${pkg.name}]: \n` + error));
   }

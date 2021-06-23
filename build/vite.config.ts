@@ -65,6 +65,9 @@ export default ({ mode }: ConfigEnv): UserConfig => {
       //   ],
       // }
     // }
+    // optimizeDeps: {
+    //   exclude: ['@fe6/water-pro', '@babel/runtime']
+    // },
   }
 };
 

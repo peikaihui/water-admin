@@ -8,10 +8,15 @@
     |
     <a href="https://v3.vuejs.org/" target="_blank">Vue 3 Documentation</a>
   </p>
-
-  <button type="button" @click="state.count++">
+  <!-- <a-typography title="333"></a-typography> -->
+  <a-basic-title help-message="ss" @click="state.count++">
+    <div>
+      count is:
+    </div>
+  </a-basic-title>
+  <!-- <a-button @click="state.count++">
     count is: {{ state.count }}
-  </button>
+  </a-button> -->
   <p>
     Edit
     <code>components/HelloWorld.vue</code> to test hot module replacement.

@@ -11,6 +11,11 @@
     "resolveJsonModule": true,
     "experimentalDecorators": true,
     "esModuleInterop": true,
+    // 若有未使用的参数则抛错。
+    "noUnusedParameters": true,
+    // 若有未使用的局部变量则抛错
+    "noUnusedLocals": true,
+    "strictNullChecks": true,
     "lib": ["esnext", "dom"],
     "types": ["vite/client", "node"],
     "paths": {
