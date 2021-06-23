@@ -1,31 +1,14 @@
-/** @format */
-
 import type { RouteRecordRaw } from 'vue-router';
-import type { App } from 'vue';
 
-import { createRouter, createWebHistory } from 'vue-router';
+// NOTE water/use
+import type { AppRouteRecordRaw } from '@@utils/use/routers/types';
+import waterRouter from '@@utils/use/routers';
 
-import { createGuard } from './guards';
+import { basicRoutes } from '@@routers/configs';
+export { setupRouter } from '@@utils/use/routers';
 
-// import { basicRoutes } from '@@routers/route-confs';
-// import { REDIRECT_NAME } from './constant';
-
-// app router
-const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  // routes: (basicRoutes as unknown) as RouteRecordRaw[],
-  strict: true,
-  scrollBehavior: () => ({ left: 0, top: 0 }),
+basicRoutes.forEach((route: AppRouteRecordRaw) => {
+  waterRouter.addRoute((route as any) as RouteRecordRaw);
 });
 
-// config router
-export function setupRouter(app: App<Element>) {
-  app.use(router);
-  createGuard(router);
-}
-
-// router.onError((error) => {
-//   console.error(error);
-// });
-
-export default router;
+export default waterRouter;

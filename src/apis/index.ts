@@ -1,10 +1,10 @@
-import createAxios from '@@utils/axios';
-import { getEnvConfig, isDevMode } from '@@utils/env';
+// NOTE water/use
+import createAxios from '@@utils/use/axios';
+import { getEnvConfig, isDevMode } from '@@utils/use/env';
+import { error } from '@@utils/use/log';
 
 // import { appStore } from '@@stores/mods/app';
 // import { authStore } from '@@stores/mods/auth';
-
-import { error } from '@@utils/log';
 
 // import { useMessage } from '@@hooks/web/use-message';
 // import { TOKEN_PREFIX } from '@@enums/cache';

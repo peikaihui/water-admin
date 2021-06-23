@@ -1,7 +1,7 @@
 /** @format */
 
 import { isString } from 'lodash-es';
-import { isDevMode } from '@@utils/env';
+import { isDevMode } from './env';
 
 export function warn(message: string) {
   return isDevMode()

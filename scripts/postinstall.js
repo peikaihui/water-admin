@@ -1,5 +1,3 @@
-/* eslint-disable max-len */
-// const emoji = require('node-emoji');
 const chalk = require('chalk');
 
 const env = process.env;
@@ -19,6 +17,6 @@ function log(it) {
 
 if (!ADBLOCK && !CI && !DISABLE_OPENCOLLECTIVE && !SILENT) {
   log(
-    '[96mThank you for using water admin ([94m https://github.com/fe6/water-admin [96m)![0m\n',
+    '\n[water admin] 感谢使用 water admin ~( https://github.com/fe6/water-admin )\n',
   );
 }

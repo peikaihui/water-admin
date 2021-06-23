@@ -1,0 +1,13 @@
+/** @format */
+
+// NOTE water/use
+@import "~utils/use/style/config.scss";
+@import "~utils/use/style/font.scss";
+
+.app {
+  font-family: $family;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+  overflow: auto;
+}
