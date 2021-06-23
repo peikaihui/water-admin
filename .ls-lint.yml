@@ -1,0 +1,23 @@
+ls:
+  src/*:
+    .js: kebab-case | lowercase
+    .jsx: kebab-case | PascalCase
+    .vue: regex:([A-Z][a-z]+)+
+    .ts: kebab-case | lowercase
+    .tsx: kebab-case | PascalCase
+    .d.ts: kebab-case | lowercase
+    .mock.ts: kebab-case | lowercase
+    .data.ts: kebab-case | lowercase
+    .test-d.ts: kebab-case | lowercase
+    .scss: kebab-case | lowercase
+    .spec.ts: kebab-case | lowercase
+
+ignore:
+  - node_modules
+  - .git
+  - .github
+  - .vscode
+  - .idea
+  - dist
+  - .local
+  - .husky
