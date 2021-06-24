@@ -108,6 +108,7 @@
       <a-layout-header
         style="background: #fff; padding: 0"
         prefix-cls="ant-layout-header"
+        class="w-layout-default-header"
       >
         <menu-unfold-outlined
           v-if="collapsed"
@@ -115,6 +116,7 @@
           @click="() => (collapsed = !collapsed)"
         />
         <menu-fold-outlined v-else class="trigger" @click="() => (collapsed = !collapsed)" />
+        <WLayoutDefaultHeader />
       </a-layout-header>
       <a-layout-content
         :style="{ margin: '24px 16px 0', padding: '24px', background: '#fff', minHeight: '280px' }"
@@ -124,7 +126,7 @@
       </a-layout-content>
       <a-layout-footer class="w-layout-default-footer">
         <div>活动易 · 文旅行业解决专家</div>
-        <div>�-2021 Evente.cn</div>
+        <div>©2012-2021 Evente.cn</div>
       </a-layout-footer>
     </a-layout>
   </a-layout>

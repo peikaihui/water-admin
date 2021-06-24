@@ -5,11 +5,14 @@ import {
 } from '@ant-design/icons-vue';
 import { defineComponent, ref } from 'vue';
 
+import WLayoutDefaultHeader from '../layout-default-header/LayoutDefaultHeader.vue';
+
 export default defineComponent({
   components: {
     UserOutlined,
     MenuUnfoldOutlined,
     MenuFoldOutlined,
+    WLayoutDefaultHeader,
   },
   setup() {
     return {
