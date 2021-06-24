@@ -12,7 +12,7 @@ export type Component<T extends any = any> =
 
 export interface RouteMeta {
   // title
-  title: string
+  title?: string
   titleTips?: string | string[]
   titleTipsStyle?: object
   // Whether to ignore permissions
@@ -58,7 +58,7 @@ export interface RouteMeta {
 // @ts-ignore
 export interface AppRouteRecordRaw extends Omit<RouteRecordRaw, 'meta'> {
   name: string
-  meta: RouteMeta
+  meta?: RouteMeta
   component?: Component | string
   components?: Component
   children?: AppRouteRecordRaw[]

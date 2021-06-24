@@ -1,5 +1,6 @@
 import type { UserConfig, ConfigEnv } from 'vite';
 
+import { resolve } from 'path';
 import { loadEnv } from 'vite'
 
 import { wrapperEnv, pathResolve, envDir } from './utils';
@@ -22,6 +23,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
   return {
     base: VITE_PUBLIC_PATH,
     root,
+    envDir,
     plugins: createVitePlugins(viteEnv, isBuild),
     server: {
       port: VITE_PORT || 3000,
@@ -31,9 +33,26 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
     },
     resolve: {
       alias: [
+        // TODO 外部 CDN 配置
         // {
         //   find: /^vue$/,
         //   replacement: 'https://esm.sh/vue@next',
+        // },
+        // {
+        //   find: /^vue-router$/,
+        //   replacement: 'https://esm.sh/vue-router@next',
+        // },
+        // {
+        //   find: /^ant-design-vue$/,
+        //   replacement: 'https://esm.sh/ant-design-vue@next',
+        // },
+        // {
+        //   find: /^vue-types$/,
+        //   replacement: 'https://esm.sh/vue-types',
+        // },
+        // {
+        //   find: /^@icon-park\/vue-next$/,
+        //   replacement: 'https://esm.sh/@icon-park/vue-next',
         // },
         {
           // @@xxxx  =>  src/xxx
@@ -63,7 +82,13 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       brotliSize: false,
       chunkSizeWarningLimit: 1200,
     },
-    envDir,
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `@import "src/utils/use/style/config.scss";@import "src/utils/use/style/font.scss";`
+        }
+      },
+    },
     // build: {
       // rollupOptions: {
       //   external: [

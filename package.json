@@ -19,6 +19,8 @@
   "dependencies": {
     "@fe6/shared": "^0.9.1",
     "@fe6/water-pro": "^3.0.20",
+    "@icon-park/vue-next": "^1.3.3",
+    "@types/fs-extra": "^9.0.11",
     "@types/lodash-es": "^4.17.4",
     "@vue/shared": "^3.1.1",
     "ant-design-vue": "^2.2.0-beta.4",
