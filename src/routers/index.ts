@@ -7,6 +7,7 @@ import waterRouter from '@@utils/use/routers';
 import { basicRoutes } from '@@routers/configs';
 export { setupRouter } from '@@utils/use/routers';
 
+// 默认路由的导入
 basicRoutes.forEach((route: AppRouteRecordRaw) => {
   waterRouter.addRoute((route as any) as RouteRecordRaw);
 });

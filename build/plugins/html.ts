@@ -8,12 +8,30 @@ import type { ViteEnv } from '../utils';
 import html from 'vite-plugin-html';
 
 export function configHtmlPlugin(env: ViteEnv, isBuild: boolean) {
-  const { VITE_PUBLIC_PATH } = env;
+  const { VITE_PUBLIC_PATH, VITE_ICON_PATH } = env;
 
   const path = VITE_PUBLIC_PATH.endsWith('/') ? VITE_PUBLIC_PATH : `${VITE_PUBLIC_PATH}/`;
 
   const getAppConfigSrc = () => {
     return `${path || '/'}_app.config.js?v=${Math.random()}-${new Date().getTime()}`;
+  };
+  
+  const getIconSrc = () => {
+    return {
+      tag: 'script',
+      attrs: {
+        src: VITE_ICON_PATH,
+      },
+    };
+  };
+  const getAntdStyleSrc = () => {
+    return {
+      tag: 'link',
+      attrs: {
+        rel: 'stylesheet',
+        src: 'https://unpkg.com/ant-design-vue@2.2.0-beta.4/dist/antd.css',
+      },
+    };
   };
 
   const htmlPlugin: Plugin[] = html({
@@ -31,8 +49,13 @@ export function configHtmlPlugin(env: ViteEnv, isBuild: boolean) {
                 src: getAppConfigSrc(),
               },
             },
+            getIconSrc(),
+            // getAntdStyleSrc(),
           ]
-        : [],
+        : [
+          getIconSrc(),
+          // getAntdStyleSrc(),
+        ],
     },
   });
   return htmlPlugin;

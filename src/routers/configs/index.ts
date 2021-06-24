@@ -40,6 +40,7 @@ export const asyncRoutes = [...routeModuleList];
 // 不用权限的白名单
 export const basicRoutes: AppRouteRecordRaw[] = [
   PAGE_NOT_FOUND_ROUTE,
+  ...asyncRoutes,
   // roginRoute,
   // rootRoute,
 ];

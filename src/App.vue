@@ -1,7 +1,7 @@
 <!-- @format -->
 
 <template>
-  <router-view class="app" />
+  <router-view />
 </template>
 
 <style lang="scss" src="./assets/styles/base.scss"></style>

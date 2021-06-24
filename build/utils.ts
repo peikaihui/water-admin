@@ -19,6 +19,7 @@ export interface ViteEnv {
   VITE_REPORT: boolean;
   VITE_API: string;
   VITE_PUBLIC_PATH: string;
+  VITE_ICON_PATH: string;
   VITE_PREFIX: string;
   VITE_OUTPUT_DIR: string;
 }
