@@ -17,6 +17,6 @@ function log(it) {
 
 if (!ADBLOCK && !CI && !DISABLE_OPENCOLLECTIVE && !SILENT) {
   log(
-    '\n[water admin] 感谢使用 water admin ~( https://github.com/fe6/water-admin )\n',
+    '\n[water admin] 感谢使用 water admin ~\n',
   );
 }

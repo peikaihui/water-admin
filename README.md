@@ -32,3 +32,16 @@ Run `Volar: Switch TS Plugin on/off` from VSCode command palette.
 - 路由配置，导航高亮规则
 - ajax 的配置
 - use 的使用
+- icon
+
+``` vue
+icon 使用
+import { BalanceTwo } from '@icon-park/vue-next';
+import Icon from '@@utils/use/components/icon';
+components: {
+  BalanceTwo,
+  Icon,
+},
+<balance-two theme="filled" size="32" fill="#17bd08" />
+    <icon icon-id="29464" size="32"></icon>
+```
