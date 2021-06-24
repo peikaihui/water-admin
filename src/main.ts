@@ -14,5 +14,5 @@ useAntd(app);
 setupRouter(app);
 
 router.isReady().then(() => {
-  app.mount('#app', true);
+  app.mount('#root', true);
 });

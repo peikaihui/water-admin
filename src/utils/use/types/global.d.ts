@@ -1,6 +1,7 @@
 /** @format */
 
 declare module 'vue-drag-resize';
+declare module '@fe6/water-pro';
 
 declare interface Fn<T = any, R = T> {
   (...arg: T[]): R;

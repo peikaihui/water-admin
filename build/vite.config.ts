@@ -54,6 +54,10 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
         //   find: /^@icon-park\/vue-next$/,
         //   replacement: 'https://esm.sh/@icon-park/vue-next',
         // },
+        // {
+        //   find: /^@fe6\/water-pro$/,
+        //   replacement: 'https://esm.sh/@fe6/water-pro',
+        // },
         {
           // @@xxxx  =>  src/xxx
           find: /^\@@/,
