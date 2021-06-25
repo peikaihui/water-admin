@@ -16,7 +16,7 @@ export default defineComponent({
     ALayoutDefaultAuth,
   },
   setup() {
-    const visible = ref(true);
+    const visible = ref(false);
 
     const hideInfo = (newStatus?: boolean) => {
       visible.value = isUndefined(newStatus) ? !visible.value : newStatus;
