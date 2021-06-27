@@ -52,8 +52,7 @@ export class VAxios {
    * @description: Reconfigure axios
    */
   configAxios(config: CreateAxiosOptions) {
-    if (!this.axiosInstance)
-      return;
+    if (!this.axiosInstance) { return; }
 
     this.createAxios(config);
   }
@@ -62,8 +61,7 @@ export class VAxios {
    * @description: Set general header
    */
   setHeader(headers: any): void {
-    if (!this.axiosInstance)
-      return;
+    if (!this.axiosInstance) { return; }
 
     Object.assign(this.axiosInstance.defaults.headers, headers);
   }
@@ -73,8 +71,7 @@ export class VAxios {
    */
   private setupInterceptors() {
     const transform = this.getTransform();
-    if (!transform)
-      return;
+    if (!transform) { return; }
 
     const {
       requestInterceptors,
@@ -93,8 +90,7 @@ export class VAxios {
           headers: { ignoreCancelToken = false },
         } = config;
         !ignoreCancelToken && axiosCanceler.addPending(config);
-        if (requestInterceptors && isFunction(requestInterceptors))
-          config = requestInterceptors(config);
+        if (requestInterceptors && isFunction(requestInterceptors)) { config = requestInterceptors(config); }
 
         return config;
       },
@@ -112,8 +108,7 @@ export class VAxios {
     // Response result interceptor processing
     this.axiosInstance.interceptors.response.use((res: AxiosResponse<any>) => {
       res && axiosCanceler.removePending(res.config);
-      if (responseInterceptors && isFunction(responseInterceptors))
-        res = responseInterceptors(res);
+      if (responseInterceptors && isFunction(responseInterceptors)) { res = responseInterceptors(res); }
 
       return res;
     }, undefined);
@@ -135,7 +130,7 @@ export class VAxios {
 
     if (params.data) {
       Object.keys(params.data).forEach((key) => {
-        if (!params.data) return;
+        if (!params.data) { return; }
         const value = params.data[key];
         if (Array.isArray(value)) {
           value.forEach((item) => {
@@ -206,8 +201,7 @@ export class VAxios {
 
     const { beforeRequestHook, requestCatch, transformRequestData }
       = transform || {};
-    if (beforeRequestHook && isFunction(beforeRequestHook))
-      conf = beforeRequestHook(conf, opt);
+    if (beforeRequestHook && isFunction(beforeRequestHook)) { conf = beforeRequestHook(conf, opt); }
 
     return new Promise((resolve, reject) => {
       this.axiosInstance

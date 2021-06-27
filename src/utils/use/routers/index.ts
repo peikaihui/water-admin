@@ -8,7 +8,7 @@ import { createGuard } from './guards';
 
 // app router
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(import.meta.env.VITE_PUBLIC_PATH as string),
   routes: [],
   strict: true,
   scrollBehavior: () => ({ left: 0, top: 0 }),

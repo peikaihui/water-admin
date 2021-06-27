@@ -6,7 +6,7 @@
     "build:test": "vite --config build/vite.config.ts build --mode test && esno ./build/script/post-build.ts --mode test",
     "build": "vite build --config build/vite.config.ts --mode production && esno ./build/script/post-build.ts --mode production",
     "serve": "vite preview --config build/vite.config.ts",
-    "lint:js": "eslint './src/**/*.{js,ts,tsx,vue,md,json}'",
+    "lint:js": "eslint './src/**/*.{js,ts,tsx,vue,json}'",
     "lint:jsfix": "nr lint:js --fix",
     "lint:css": "stylelint ./src/**/*.{scss,vue}",
     "lint:cssfix": "nr lint:css --fix",
@@ -24,6 +24,7 @@
     "@types/fs-extra": "^9.0.11",
     "@types/lodash-es": "^4.17.4",
     "@vue/shared": "^3.1.1",
+    "@vueuse/core": "^5.0.3",
     "ant-design-vue": "^2.2.0-beta.4",
     "axios": "^0.21.1",
     "em-normalize": "^1.0.2",
@@ -33,11 +34,13 @@
     "rollup-plugin-visualizer": "^5.5.0",
     "sass": "^1.35.1",
     "vue": "^3.1.1",
-    "vue-router": "^4.0.10"
+    "vue-router": "^4.0.10",
+    "vuex": "^4.0.2",
+    "vuex-module-decorators": "^1.0.1"
   },
   "devDependencies": {
     "@antfu/ni": "^0.7.0",
-    "@fe6/norm": "^3.1.3",
+    "@fe6/norm": "^3.2.0",
     "@types/node": "^15.12.2",
     "@types/yargs": "^17.0.0",
     "@vitejs/plugin-vue": "^1.2.3",

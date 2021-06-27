@@ -1,27 +1,39 @@
 import {
   UserOutlined,
-  MenuUnfoldOutlined,
-  MenuFoldOutlined,
 } from '@ant-design/icons-vue';
-import { defineComponent, ref } from 'vue';
+import { defineComponent, ref, computed } from 'vue';
+import { useStore } from 'vuex';
 
 import WLayoutDefaultHeader from '../layout-default-header/LayoutDefaultHeader.vue';
+import WLayoutDefaultMenu from '../layout-default-menu/LayoutDefaultMenu.vue';
+import AContainerScroll from '../container-scroll/ContainerScroll.vue';
 
 export default defineComponent({
   components: {
     UserOutlined,
-    MenuUnfoldOutlined,
-    MenuFoldOutlined,
+    AContainerScroll,
     WLayoutDefaultHeader,
+    WLayoutDefaultMenu,
   },
   setup() {
+    const appStore = useStore();
+    const pageLoading = computed(() => appStore.state.app.pageLoading);
+
+    const collapsed = ref(false);
+    const changeCollapsed = () => {
+      collapsed.value = !collapsed.value;
+    };
+
     return {
       selectedKeys: ref<string[]>(['1']),
-      collapsed: ref<boolean>(false),
+      collapsed,
+      changeCollapsed,
 
       selectedKeys1: ref<string[]>(['2']),
       selectedKeys2: ref<string[]>(['1']),
       openKeys: ref<string[]>(['sub1']),
+
+      pageLoading,
     };
   },
 });

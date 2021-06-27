@@ -1,31 +1,44 @@
-import { isUndefined } from 'lodash';
+import { isUndefined } from 'lodash-es';
 import { defineComponent, ref } from 'vue';
-import { EditOutlined, ShareAltOutlined } from '@ant-design/icons-vue';
+import {
+  MenuUnfoldOutlined,
+  MenuFoldOutlined,
+} from '@ant-design/icons-vue';
 
-import WBasicArrow from '../basic-arrow/BasicArrow.vue';
+import { propTypes } from '../../utils/prop-types';
+import ABasicArrow from '../basic-arrow/BasicArrow.vue';
 import ALayoutDefaultAuth from '../layout-default-auth/LayoutDefaultAuth.vue';
+import ALayoutDefaultPanel from '../layout-default-panel/LayoutDefaultPanel.vue';
 import Icon from '../icon';
-import { errUploadImage } from './error-image';
 
 export default defineComponent({
   components: {
     Icon,
-    EditOutlined,
-    ShareAltOutlined,
-    WBasicArrow,
+    MenuUnfoldOutlined,
+    MenuFoldOutlined,
+    ABasicArrow,
     ALayoutDefaultAuth,
+    ALayoutDefaultPanel,
   },
-  setup() {
+  props: {
+    collapsed: propTypes.looseBool,
+  },
+  emits: ['on-collapsed'],
+  setup(props, { emit }) {
     const visible = ref(false);
 
     const hideInfo = (newStatus?: boolean) => {
       visible.value = isUndefined(newStatus) ? !visible.value : newStatus;
     };
 
+    const changeCollapsed = () => {
+      emit('on-collapsed', props.collapsed);
+    };
+
     return {
+      changeCollapsed,
       visible,
       hideInfo,
-      errUploadImage,
     };
   }
 });

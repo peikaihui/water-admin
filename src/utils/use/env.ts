@@ -1,5 +1,6 @@
 /** @format */
 
+import { isString } from 'lodash-es';
 import type { EnvConfig } from './types/config';
 
 /**
@@ -7,7 +8,17 @@ import type { EnvConfig } from './types/config';
  */
 export function getEnvConfig(): EnvConfig {
   const env = import.meta.env;
-  return (env as unknown) as EnvConfig;
+  const ret: any = {};
+
+  for (const envName of Object.keys(env)) {
+    let realName: number | string | boolean | undefined = isString(env[envName]) ? (env[envName] as string).replace(/\\n/g, '\n') : env[envName];
+    realName = realName === 'true' ? true : realName === 'false' ? false : realName;
+    if (envName === 'VITE_PORT') { realName = Number(realName); }
+
+    ret[envName] = realName;
+  }
+  return ret;
+  // return (env as unknown) as EnvConfig;
 }
 
 /**
