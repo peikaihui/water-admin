@@ -23,7 +23,7 @@ export interface RequestOptions {
 
 export interface CreateAxiosOptions extends AxiosRequestConfig {
   prefixUrl?: string
-  transform?: AxiosTransform
+  transform: AxiosTransform
   requestOptions?: RequestOptions
   apiUrl?: string
   isDevMode?: () => boolean

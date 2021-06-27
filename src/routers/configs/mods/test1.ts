@@ -21,6 +21,14 @@ const test1Page: AppRouteModule = {
           },
           component: () => import('@@views/Test.vue'),
         },
+        {
+          path: 'test4',
+          name: 'Test4View',
+          meta: {
+            title: '测试4',
+          },
+          component: () => import('@@views/Test.vue'),
+        },
       ],
       component: LAYOUT_BOX,
     },

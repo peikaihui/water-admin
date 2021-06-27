@@ -30,6 +30,10 @@ export abstract class AxiosTransform {
    * @description: 请求之前的拦截器
    */
   requestInterceptors?: (config: AxiosRequestConfig) => AxiosRequestConfig;
+  /**
+   * @description: 请求之前的拦截器中间执行的
+   */
+  transformRequestInner?: (config: AxiosRequestConfig) => void;
 
   /**
    * @description: 请求之后的拦截器

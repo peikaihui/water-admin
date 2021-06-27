@@ -3,8 +3,7 @@
 import { Router } from 'vue-router';
 
 // import { createProgressGuard } from './progress';
-// import { createPermissionGuard } from './permission';
-// import { createPageLoadingGuard } from './page-loading';
+import { createPageLoadingGuard } from './page-loading';
 // import { createTitleGuard } from './title';
 // import { createMessageGuard } from './message';
 // import { createScrollGuard } from './scroll';
@@ -13,13 +12,12 @@ import { Router } from 'vue-router';
 // import { createNavGuard } from './nav';
 
 export function createGuard(router: Router) {
-  // createPageLoadingGuard(router);
+  createPageLoadingGuard(router);
   // createNavGuard(router);
   // createHttpGuard(router);
   // createScrollGuard(router);
   // createMessageGuard(router);
   // createTitleGuard(router);
   // createProgressGuard(router);
-  // createPermissionGuard(router);
   // createStateGuard(router);
 }

@@ -30,11 +30,15 @@ Run `Volar: Switch TS Plugin on/off` from VSCode command palette.
 ### 文档目录
 
 - 路由配置，导航高亮规则
+- 权限的配置
 - ajax 的配置
 - use 的使用
 - icon
+- vuex 相关
 
 ``` vue
+// 官网： https://iconpark.oceanengine.com/official
+// 参数： https://bytedance.feishu.cn/docs/doccnfQ9MVhtfye33SymobB5usb#bIprMt
 icon 使用
 import { BalanceTwo } from '@icon-park/vue-next';
 import Icon from '@@utils/use/components/icon';
@@ -45,3 +49,12 @@ components: {
 <balance-two theme="filled" size="32" fill="#17bd08" />
     <icon icon-id="29464" size="32"></icon>
 ```
+
+
+### 待办
+
+- 一级路径跳转
+- 导航高亮匹配
+- 二级导航渲染
+- 头部右边
+- 公共退出

@@ -24,17 +24,7 @@
   resolved "https://registry.npm.taobao.org/@ant-design/icons-svg/download/@ant-design/icons-svg-4.1.0.tgz#480b025f4b20ef7fe8f47d4a4846e4fee84ea06c"
   integrity sha1-SAsCX0sg73/o9H1KSEbk/uhOoGw=
 
-"@ant-design/icons-vue@^6.0.0":
-  version "6.0.1"
-  resolved "https://registry.npm.taobao.org/@ant-design/icons-vue/download/@ant-design/icons-vue-6.0.1.tgz?cache=0&sync_timestamp=1611990835390&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40ant-design%2Ficons-vue%2Fdownload%2F%40ant-design%2Ficons-vue-6.0.1.tgz#9d804c3c74d2cfaf97cb18e582d3b9400934f5fd"
-  integrity sha1-nYBMPHTSz6+XyxjlgtO5QAk09f0=
-  dependencies:
-    "@ant-design/colors" "^5.0.0"
-    "@ant-design/icons-svg" "^4.0.0"
-    "@types/lodash" "^4.14.165"
-    lodash "^4.17.15"
-
-"@ant-design/icons-vue@^6.0.1":
+"@ant-design/icons-vue@^6.0.0", "@ant-design/icons-vue@^6.0.1":
   version "6.0.1"
   resolved "https://registry.nlark.com/@ant-design/icons-vue/download/@ant-design/icons-vue-6.0.1.tgz#9d804c3c74d2cfaf97cb18e582d3b9400934f5fd"
   integrity sha1-nYBMPHTSz6+XyxjlgtO5QAk09f0=
@@ -540,10 +530,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@fe6/norm@^3.1.3":
-  version "3.1.3"
-  resolved "https://registry.nlark.com/@fe6/norm/download/@fe6/norm-3.1.3.tgz?cache=0&sync_timestamp=1624412249829&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40fe6%2Fnorm%2Fdownload%2F%40fe6%2Fnorm-3.1.3.tgz#eaba0019f2c118eccd6b7ffd894fd057533eb577"
-  integrity sha1-6roAGfLBGOzNa3/9iU/QV1M+tXc=
+"@fe6/norm@^3.2.0":
+  version "3.2.0"
+  resolved "https://registry.nlark.com/@fe6/norm/download/@fe6/norm-3.2.0.tgz?cache=0&sync_timestamp=1624807177703&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40fe6%2Fnorm%2Fdownload%2F%40fe6%2Fnorm-3.2.0.tgz#fb5d26103f375f0575c2997d57177aa513e60936"
+  integrity sha1-+10mED83XwV1wpl9Vxd6pRPmCTY=
   dependencies:
     "@antfu/eslint-config" "^0.6.6"
     "@antfu/ni" "^0.7.0"
@@ -1108,7 +1098,7 @@
     "@vue/compiler-dom" "3.1.1"
     "@vue/shared" "3.1.1"
 
-"@vue/devtools-api@^6.0.0-beta.14":
+"@vue/devtools-api@^6.0.0-beta.11", "@vue/devtools-api@^6.0.0-beta.14":
   version "6.0.0-beta.14"
   resolved "https://registry.nlark.com/@vue/devtools-api/download/@vue/devtools-api-6.0.0-beta.14.tgz?cache=0&sync_timestamp=1623239610247&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vue%2Fdevtools-api%2Fdownload%2F%40vue%2Fdevtools-api-6.0.0-beta.14.tgz#6ed2d6f8d66a9256c9ad04bfff08309ba87b9723"
   integrity sha1-btLW+NZqklbJrQS//wgwm6h7lyM=
@@ -1157,10 +1147,25 @@
     "@vueuse/shared" "4.11.2"
     vue-demi "*"
 
+"@vueuse/core@^5.0.3":
+  version "5.0.3"
+  resolved "https://registry.nlark.com/@vueuse/core/download/@vueuse/core-5.0.3.tgz#8f3170e2a51ae62fb1725c84d4cc02a7552aad0b"
+  integrity sha1-jzFw4qUa5i+xclyE1MwCp1UqrQs=
+  dependencies:
+    "@vueuse/shared" "5.0.3"
+    vue-demi "*"
+
 "@vueuse/shared@4.11.2":
   version "4.11.2"
   resolved "https://registry.nlark.com/@vueuse/shared/download/@vueuse/shared-4.11.2.tgz#1d56e08937600e3e65abf76f27cb4a1bc182adfd"
   integrity sha1-HVbgiTdgDj5lq/dvJ8tKG8GCrf0=
+  dependencies:
+    vue-demi "*"
+
+"@vueuse/shared@5.0.3":
+  version "5.0.3"
+  resolved "https://registry.nlark.com/@vueuse/shared/download/@vueuse/shared-5.0.3.tgz#31613951d5036459650ad8d47a9185e8950ea3c9"
+  integrity sha1-MWE5UdUDZFllCtjUepGF6JUOo8k=
   dependencies:
     vue-demi "*"
 
@@ -9687,6 +9692,18 @@ vue@^3.0.0, vue@^3.1.1:
     "@vue/compiler-dom" "3.1.1"
     "@vue/runtime-dom" "3.1.1"
     "@vue/shared" "3.1.1"
+
+vuex-module-decorators@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.nlark.com/vuex-module-decorators/download/vuex-module-decorators-1.0.1.tgz#d34dafb5428a3636f1c26d3d014c15fc9659ccd0"
+  integrity sha1-002vtUKKNjbxwm09AUwV/JZZzNA=
+
+vuex@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.nlark.com/vuex/download/vuex-4.0.2.tgz?cache=0&sync_timestamp=1623945253165&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fvuex%2Fdownload%2Fvuex-4.0.2.tgz#f896dbd5bf2a0e963f00c67e9b610de749ccacc9"
+  integrity sha1-+Jbb1b8qDpY/AMZ+m2EN50nMrMk=
+  dependencies:
+    "@vue/devtools-api" "^6.0.0-beta.11"
 
 warning@^4.0.0:
   version "4.0.3"
