@@ -2,16 +2,17 @@
 
 import type { Router } from 'vue-router';
 
-import { unref } from 'vue';
+import { unref, ref } from 'vue';
+import { useTimeoutFn } from '@vueuse/core';
 
 import myStores from '../../stores';
-import { useTimeoutFn } from '@vueuse/core';
 
 // 全局 加载状态 的 守卫
 export function createPageLoadingGuard(router: Router) {
-  let TimeoutStop = null;
-  let TimeoutIsPending = false;
+  let timeoutStop = () => {};
+  let timeoutIsPending = ref(false);
   router.beforeEach(() => {
+    // NOTE token
     // if (!authStore.getTokenState) {
     //   return true;
     // }
@@ -22,13 +23,14 @@ export function createPageLoadingGuard(router: Router) {
     return true;
   });
   router.afterEach((to) => {
-    if (!to.meta.loading && !TimeoutIsPending) {
+    if (!to.meta.loading && !timeoutIsPending.value) {
+      timeoutStop();
       const { isPending, stop } = useTimeoutFn(() => {
         unref(myStores).dispatch('app/setPageLoading', false);
-      }, 2000);
+      }, 300);
 
-      TimeoutStop = stop;
-      TimeoutIsPending = isPending.value;
+      timeoutStop = stop;
+      timeoutIsPending = isPending;
     }
 
     return true;

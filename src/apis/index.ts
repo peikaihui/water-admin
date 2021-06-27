@@ -24,6 +24,7 @@ export default createAxios({
       unref(myStores).dispatch('app/setPageLoading', false);
     },
     requestInterceptors: (config) => {
+      // NOTE token
       // 请求之前处理config
       const token = 'authStore.getTokenState';
       if (token) {
