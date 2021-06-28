@@ -1,8 +1,8 @@
 /** @format */
 
 // NOTE water/use
-import type { AppRouteModule } from '@@utils/use/routers/types';
-import { LAYOUT_DEF, LAYOUT_BOX } from '@@utils/use/routers/constant';
+import type { AppRouteModule } from '@fe6/water-use/src/index';
+import { LAYOUT_DEF, LAYOUT_BOX } from '@fe6/water-use/routers/constant';
 
 const test3Page: AppRouteModule = {
   path: '/test3',

@@ -64,6 +64,18 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
           replacement: `${pathResolve('src')}/`,
         },
         {
+          // @@xxxx  =>  src/xxx
+          // 由于没打包所以这样配置一下
+          find: /^\@fe6\/water-use/,
+          replacement: `${pathResolve('node_modules/@fe6/water-use/src')}/`,
+        },
+        {
+          // 不然 water-use找不到 组件库
+          // @@xxxx  =>  src/xxx
+          find: /^\@fe6\/water-pro/,
+          replacement: `${pathResolve('node_modules/@fe6/water-pro')}/`,
+        },
+        {
           // ~assets/xxxx  =>  src/assets/xxx
           find: /^\~assets/,
           replacement: `${pathResolve('src')}/assets`,
@@ -89,7 +101,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: `@import "src/utils/use/style/config.scss";@import "src/utils/use/style/font.scss";`
+          additionalData: `@import "@fe6/water-use/style/config.scss";@import "@fe6/water-use/style/font.scss";`
         }
       },
     },

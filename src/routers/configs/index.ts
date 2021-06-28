@@ -1,11 +1,11 @@
-import type { AppRouteRecordRaw, AppRouteModule } from '@@utils/use/routers/types';
+// import type { AppRouteRecordRaw, AppRouteModule } from '@fe6/water-use/routers/types';
 
 // NOTE water/use
-import { PAGE_NOT_FOUND_ROUTE } from '@@utils/use/routers/configs/routers';
+import { PAGE_NOT_FOUND_ROUTE } from '@fe6/water-use/routers/configs/routers';
 
 const modules = import.meta.globEager('./mods/**/*.ts');
 
-const routeModuleList: AppRouteModule[] = [];
+const routeModuleList: any[] = [];
 
 Object.keys(modules).forEach((key) => {
   const mod = modules[key].default || {};
@@ -16,7 +16,7 @@ Object.keys(modules).forEach((key) => {
 export const asyncRoutes = [...routeModuleList];
 
 // 不用权限的白名单
-export const basicRoutes: AppRouteRecordRaw[] = [
+export const basicRoutes: any[] = [
   PAGE_NOT_FOUND_ROUTE,
   ...asyncRoutes,
 ];

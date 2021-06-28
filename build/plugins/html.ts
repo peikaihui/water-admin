@@ -24,15 +24,6 @@ export function configHtmlPlugin(env: ViteEnv, isBuild: boolean) {
       },
     };
   };
-  const getAntdStyleSrc = () => {
-    return {
-      tag: 'link',
-      attrs: {
-        rel: 'stylesheet',
-        src: 'https://unpkg.com/ant-design-vue@2.2.0-beta.4/dist/antd.css',
-      },
-    };
-  };
 
   const htmlPlugin: Plugin[] = html({
     minify: isBuild,
@@ -50,11 +41,9 @@ export function configHtmlPlugin(env: ViteEnv, isBuild: boolean) {
               },
             },
             getIconSrc(),
-            // getAntdStyleSrc(),
           ]
         : [
           getIconSrc(),
-          // getAntdStyleSrc(),
         ],
     },
   });
