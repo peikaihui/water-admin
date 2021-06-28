@@ -28,9 +28,7 @@
         <a-layout-default-auth class="w-layout-default-header-item" />
       </div>
       <div style="flex: 1 1 0%;" />
-      <div>
-        header
-      </div>
+      <a-layout-default-action />
     </div>
   </a-layout-header>
 </template>

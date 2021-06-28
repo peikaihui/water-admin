@@ -8,7 +8,7 @@
       <a-layout
         prefix-cls="ant-layout"
       >
-        <a-affix>
+        <a-affix :style="{ zIndex: 1 }">
           <w-layout-default-header :collapsed="collapsed" @on-collapsed="changeCollapsed" />
         </a-affix>
         <a-container-scroll class="w-layout-default-main">
