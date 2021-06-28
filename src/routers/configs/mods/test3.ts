@@ -17,7 +17,7 @@ const test3Page: AppRouteModule = {
           path: '',
           name: 'Test3View',
           meta: {
-            title: '测试3',
+            title: '微页面',
           },
           component: () => import('@@views/Test.vue'),
         },

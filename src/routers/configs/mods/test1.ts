@@ -19,7 +19,7 @@ const test1Page: AppRouteModule = {
           meta: {
             title: '测试1',
           },
-          component: () => import('@@views/Test.vue'),
+          component: () => import('@@views/TestContent.vue'),
         },
         {
           path: 'test4',
@@ -27,7 +27,7 @@ const test1Page: AppRouteModule = {
           meta: {
             title: '测试4',
           },
-          component: () => import('@@views/Test.vue'),
+          component: () => import('@@views/TestContent.vue'),
         },
       ],
       component: LAYOUT_BOX,
