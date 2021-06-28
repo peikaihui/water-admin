@@ -3,7 +3,7 @@ import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
 } from '@ant-design/icons-vue';
-import { defineComponent, computed, ref, onBeforeMount, watchEffect, unref, watch } from 'vue';
+import { defineComponent, computed, ref, onBeforeMount, watchEffect, watch } from 'vue';
 import { useStore } from 'vuex';
 import { useRouter } from 'vue-router';
 
@@ -14,16 +14,14 @@ import { propTypes } from '../../utils/prop-types';
 import { getAvtiveKey } from '../../utils/menus';
 import { getEnvConfig } from '../../env';
 
-import Icon from '../icon';
-import AContainerScroll from '../container-scroll/ContainerScroll.vue';
+import AIcon from '../icon';
 
 export default defineComponent({
   components: {
-    Icon,
+    AIcon,
     UserOutlined,
     MenuUnfoldOutlined,
     MenuFoldOutlined,
-    AContainerScroll,
   },
   props: {
     collapsed: propTypes.looseBool,

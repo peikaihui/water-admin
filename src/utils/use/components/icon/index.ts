@@ -7,6 +7,7 @@ import { propTypes } from '../../utils/prop-types';
 // 官网： https://iconpark.oceanengine.com/official
 // 参数： https://bytedance.feishu.cn/docs/doccnfQ9MVhtfye33SymobB5usb#bIprMt
 export default defineComponent({
+  name: 'AIcon',
   props: {
     iconId: propTypes.string,
     size: propTypes.string,

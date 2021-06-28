@@ -21,7 +21,7 @@
           :key="menuItem.permissionCode"
           class="w-layout-default-menu-item"
         >
-          <icon :icon-id="menuItem.icon" size="14" color="#fff"></icon>
+          <a-icon :icon-id="menuItem.icon" size="14" color="#fff"></a-icon>
           <span class="w-layout-default-menu-name">{{ menuItem.name }}</span>
         </a-menu-item>
         <a-menu-item
@@ -30,7 +30,7 @@
           class="w-layout-default-menu-item"
           :class="menuIdx === 0 ? 'w-layout-default-menu-other' : ''"
         >
-          <icon :icon-id="menuItem.icon" size="14" color="#fff"></icon>
+          <a-icon :icon-id="menuItem.icon" size="14" color="#fff"></a-icon>
           <span class="w-layout-default-menu-name">{{ menuItem.name }}</span>
         </a-menu-item>
       </a-menu>

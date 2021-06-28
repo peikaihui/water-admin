@@ -7,12 +7,11 @@ import { useStore } from 'vuex';
 import WLayoutDefaultHeader from '../layout-default-header/LayoutDefaultHeader.vue';
 import WLayoutDefaultPageheader from '../layout-default-pageheader/LayoutDefaultPageheader.vue';
 import WLayoutDefaultMenu from '../layout-default-menu/LayoutDefaultMenu.vue';
-import AContainerScroll from '../container-scroll/ContainerScroll.vue';
 
 export default defineComponent({
+  name: 'ALayoutDefault',
   components: {
     UserOutlined,
-    AContainerScroll,
     WLayoutDefaultHeader,
     WLayoutDefaultPageheader,
     WLayoutDefaultMenu,

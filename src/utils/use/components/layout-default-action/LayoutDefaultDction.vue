@@ -15,7 +15,9 @@
         <span class="w-layout-default-action-name">用户名</span>
       </div>
       <template #overlay>
-        <a-menu>
+        <a-menu
+          @click="handleMenuClick"
+        >
           <a-menu-item key="set">
             <UserOutlined />账户管理
           </a-menu-item>

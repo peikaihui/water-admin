@@ -5,13 +5,13 @@ import {
 } from '@ant-design/icons-vue';
 
 import ALayoutDefaultAuth from '../layout-default-auth/LayoutDefaultAuth.vue';
-import Icon from '../icon';
+import AIcon from '../icon';
 
 import { errUploadImage } from './error-image';
 
 export default defineComponent({
   components: {
-    Icon,
+    AIcon,
     ShareAltOutlined,
     EditOutlined,
     ALayoutDefaultAuth,
