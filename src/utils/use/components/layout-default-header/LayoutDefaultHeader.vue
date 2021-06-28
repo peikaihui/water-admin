@@ -6,10 +6,10 @@
   >
     <menu-unfold-outlined
       v-if="collapsed"
-      class="trigger"
+      class="w-layout-default-header-trigger"
       @click="changeCollapsed"
     />
-    <menu-fold-outlined v-else class="trigger" @click="changeCollapsed" />
+    <menu-fold-outlined v-else class="w-layout-default-header-trigger" @click="changeCollapsed" />
     <div class="w-layout-default-header-inner">
       <div class="w-layout-default-header-label">
         <a-dropdown

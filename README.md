@@ -58,3 +58,8 @@ components: {
 - 二级导航渲染
 - 头部右边
 - 公共退出
+
+
+### 新建项目
+
+- 设置 `build/env` 中的字段 ***VITE_PUBLIC_PATH*** ， ***VITE_BASE_HOME*** ， ***VITE_MENU_ACTIVE***

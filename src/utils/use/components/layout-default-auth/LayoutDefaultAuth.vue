@@ -7,4 +7,3 @@
 </template>
 
 <script lang="ts" src="./layout-default-auth.ts"></script>
-<style lang="scss" src="./layout-default-auth.scss"></style>

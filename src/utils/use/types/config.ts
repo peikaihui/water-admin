@@ -9,6 +9,7 @@ export interface EnvConfig {
   VITE_MENU_ACTIVE: string;
   VITE_API: string;
   VITE_PUBLIC_PATH: string;
+  VITE_BASE_HOME: string;
   VITE_PREFIX: string;
   VITE_OUTPUT_DIR: string;
 }

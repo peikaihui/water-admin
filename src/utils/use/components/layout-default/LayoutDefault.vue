@@ -12,12 +12,8 @@
           <w-layout-default-header :collapsed="collapsed" @on-collapsed="changeCollapsed" />
         </a-affix>
         <a-container-scroll class="w-layout-default-main">
-          <a-layout-content
-            class="w-layout-default-content"
-            prefix-cls="ant-layout-content"
-          >
-            <router-view></router-view>
-          </a-layout-content>
+          <w-layout-default-pageheader />
+          <router-view></router-view>
           <a-layout-footer class="w-layout-default-footer">
             <div>活动易 · 文旅行业解决专家</div>
             <div>©2012-2021 Evente.cn</div>

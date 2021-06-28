@@ -2,23 +2,6 @@
   width: 100%;
   min-height: 100%;
 
-  & .trigger {
-    font-size: 18px;
-    line-height: 64px;
-    display: block;
-    padding: 0 24px;
-    cursor: pointer;
-    transition: color 0.3s;
-
-    & svg {
-      display: block;
-    }
-  }
-
-  & .trigger:hover {
-    color: #1890ff;
-  }
-
   &-main {
     height: calc(100vh - 64px);
   }
