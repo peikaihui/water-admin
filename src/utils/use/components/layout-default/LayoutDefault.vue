@@ -13,7 +13,15 @@
         </a-affix>
         <a-container-scroll class="w-layout-default-main">
           <w-layout-default-pageheader />
-          <router-view></router-view>
+          <router-view v-slot="{ Component }">
+            <transition
+              name="fade-slide"
+              mode="out-in"
+              appear
+            >
+              <component :is="Component" />
+            </transition>
+          </router-view>
           <a-layout-footer class="w-layout-default-footer">
             <div>活动易 · 文旅行业解决专家</div>
             <div>©2012-2021 Evente.cn</div>
