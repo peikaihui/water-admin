@@ -31,7 +31,7 @@
     <a-row class="w-layout-default-panel-footer">
       <a-col :span="11">
         <div class="w-layout-default-panel-action">
-          <icon icon-id="29515" size="14"></icon>
+          <a-icon icon-id="29515" size="14"></a-icon>
           <span class="w-layout-default-panel-label">切换店铺</span>
         </div>
       </a-col>

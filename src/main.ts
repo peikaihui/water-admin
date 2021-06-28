@@ -3,7 +3,7 @@ import { createApp } from 'vue';
 import router, { setupRouter } from '@@routers';
 
 // NOTE water/use
-import useAntd from '@@utils/use/antd';
+import useAntd from '@@utils/use/water';
 import { setupStore } from '@@utils/use/stores';
 
 import App from './App.vue';

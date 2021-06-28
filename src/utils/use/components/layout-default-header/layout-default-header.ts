@@ -6,18 +6,14 @@ import {
 } from '@ant-design/icons-vue';
 
 import { propTypes } from '../../utils/prop-types';
-import ABasicArrow from '../basic-arrow/BasicArrow.vue';
 import ALayoutDefaultAuth from '../layout-default-auth/LayoutDefaultAuth.vue';
 import ALayoutDefaultPanel from '../layout-default-panel/LayoutDefaultPanel.vue';
 import ALayoutDefaultAction from '../layout-default-action/LayoutDefaultDction.vue';
-import Icon from '../icon';
 
 export default defineComponent({
   components: {
-    Icon,
     MenuUnfoldOutlined,
     MenuFoldOutlined,
-    ABasicArrow,
     ALayoutDefaultAuth,
     ALayoutDefaultPanel,
     ALayoutDefaultAction,
