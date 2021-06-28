@@ -32,7 +32,6 @@ export default defineComponent({
   setup(props, { emit }) {
     const { VITE_MENU_ACTIVE } = getEnvConfig();
     const { currentRoute } = useRouter();
-    const { fullPath } = unref(currentRoute);
     const myStores = useStore();
 
     const menus = computed(() => {
@@ -42,16 +41,21 @@ export default defineComponent({
     const activeNavKey = ref<string[]>([]);
     const openNavKey = ref<string[]>([]);
     const navs = computed(() => myStores.state.external.navs);
+    const navTitle = computed(() => myStores.state.external.navTitle);
 
-    watch(() => myStores.state.external.navs, (newNavs) => {
+    watch([() => myStores.state.external.navs, currentRoute], ([newNavs, newRoute]) => {
       const {
         activeNavCode,
         openNavCode,
-      } = getAvtiveKey(newNavs, fullPath);
+      } = getAvtiveKey(newNavs, newRoute.fullPath);
 
-      if (activeNavCode) { activeNavKey.value.push(activeNavCode); }
+      if (activeNavCode) {
+        activeNavKey.value = [];
+        activeNavKey.value.push(activeNavCode);
+      }
 
       if (openNavCode) {
+        openNavKey.value = [];
         openNavKey.value.push(openNavCode);
       }
     });
@@ -82,6 +86,7 @@ export default defineComponent({
 
       menus,
       navs,
+      navTitle,
     };
   },
 });

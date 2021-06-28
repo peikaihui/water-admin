@@ -13,7 +13,8 @@ import { filter } from './utils';
 import { useGo } from '../../hooks/use-page';
 import { getEnvConfig } from '../../env';
 
-const homeText = '首页';
+// TODO [fix] 莫名的首页匹配面包屑
+// const homeText = '首页';
 
 export default () => {
   const routes = ref<RouteLocationMatched[]>([]);
@@ -33,15 +34,16 @@ export default () => {
       (item: any) => item.meta && item.meta.title && item.path !== VITE_BASE_HOME,
     );
 
-    if (filterBreadcrumbList.length === breadcrumbList.length) {
-      filterBreadcrumbList.unshift(({
-        path: VITE_BASE_HOME,
-        meta: {
-          title: homeText,
-          isLink: true,
-        },
-      } as unknown) as RouteLocationMatched);
-    }
+    // TODO [fix] 莫名的首页匹配面包屑
+    // if (filterBreadcrumbList.length === breadcrumbList.length) {
+    //   filterBreadcrumbList.unshift(({
+    //     path: VITE_BASE_HOME,
+    //     meta: {
+    //       title: homeText,
+    //       isLink: true,
+    //     },
+    //   } as unknown) as RouteLocationMatched);
+    // }
 
     if (currentRoute.value.meta?.currentActiveMenu) {
       filterBreadcrumbList.push(

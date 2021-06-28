@@ -48,7 +48,7 @@
     @collapse="collapseChange"
   >
     <div class="w-layout-default-menu-header-name">
-      产品管理
+      {{ navTitle }}
     </div>
     <a-container-scroll class="w-layout-default-menu-light">
       <a-menu
