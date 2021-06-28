@@ -23,27 +23,11 @@ export const getDarkMenus = (external: MenuModal[]) => {
   };
 };
 
-const getSubMenus = (external: MenuModal[]): MenuModal[] => {
-  // 如果没有 二级 导航
-  if (!external.length) { return []; }
-
-  const testPathNavs: MenuModal[] = [];
-
-  external.forEach(({ subMenus, ...eItem }: MenuModal) => {
-    testPathNavs.push(eItem);
-    if (subMenus && subMenus.length) {
-      subMenus.forEach(({ subMenus: subMenusChild, ...childItem }: MenuModal) => {
-        testPathNavs.push(childItem);
-      });
-    }
-  });
-
-  return testPathNavs;
-};
-
 export interface NavActiveModal {
   activeNavCode: string
   openNavCode: string
+  twoNavItem: MenuModal
+  threeNavItem: MenuModal
 }
 
 export const getAvtiveKey = (navs: MenuModal[], fullPath: string): NavActiveModal => {
@@ -52,39 +36,60 @@ export const getAvtiveKey = (navs: MenuModal[], fullPath: string): NavActiveModa
     return {
       activeNavCode: '',
       openNavCode: '',
+      twoNavItem: {} as MenuModal,
+      threeNavItem: {} as MenuModal,
     };
   }
 
   const testPathNavs: MenuModal[] = [];
   let activeNavCode = '';
   let openNavCode = '';
+  let twoNavItem = {} as MenuModal;
+  let threeNavItem = {} as MenuModal;
   navs.forEach(({ subMenus, ...eItem }: MenuModal) => {
     testPathNavs.push(eItem);
     // NOTE 匹配 三级
     if (subMenus && subMenus.length) {
       const activeNavItem = subMenus.find((sItem: MenuModal) => sItem.path.includes(fullPath));
 
-      if (activeNavItem) { activeNavCode = activeNavItem.permissionCode; }
+      if (activeNavItem) {
+        activeNavCode = activeNavItem.permissionCode;
+        threeNavItem = activeNavItem;
+      }
     }
     else {
       const activeNav = eItem.path.includes(fullPath);
       if (activeNav) {
         activeNavCode = eItem.permissionCode;
         openNavCode = eItem.permissionCode;
+        twoNavItem = eItem;
       }
     }
     // NOTE 匹配 二级
-    if (activeNavCode && !openNavCode) { openNavCode = eItem.permissionCode; }
+    if (activeNavCode && !openNavCode) {
+      openNavCode = eItem.permissionCode;
+      twoNavItem = eItem;
+    }
   });
 
   return {
     activeNavCode,
     openNavCode,
+    twoNavItem,
+    threeNavItem,
   };
 };
 
-export const getLightMenus = (external: MenuModal[]): MenuModal[] => {
+export interface LightMenusModal {
+  title: string
+  currentNavs: MenuModal[]
+}
+
+export const getLightMenus = (external: MenuModal[]): LightMenusModal => {
   const currentMenus = external.find((eItem: MenuModal) => eItem.permissionCode === VITE_MENU_ACTIVE);
   const currentNavs = currentMenus?.subMenus || [];
-  return currentNavs;
+  return {
+    title: currentMenus?.name || '',
+    currentNavs,
+  };
 };

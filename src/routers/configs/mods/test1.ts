@@ -25,7 +25,7 @@ const test1Page: AppRouteModule = {
           path: 'test4',
           name: 'Test4View',
           meta: {
-            title: '测试4',
+            title: '店铺主页',
           },
           component: () => import('@@views/TestContent.vue'),
         },

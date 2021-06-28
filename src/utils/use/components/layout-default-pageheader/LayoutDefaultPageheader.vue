@@ -1,23 +1,14 @@
 <template>
-  <a-page-header
-    title="Title"
-    :ghost="false"
-    :breadcrumb="{ routes }"
-    sub-title="This is a subtitle"
-  />
-  <!-- <div>
-    -{{rrr}}
-    <a-breadcrumb :routes="rrr">
-      <template #itemRender="{ route, params, routes, paths }">
-        <span v-if="routes.indexOf(route) === routes.length - 1">
-          {{route.meta.title}}
-        </span>
-        <router-link v-else :to="paths.join('/')">
-          {{route.meta.title}}
-        </router-link>
+  <div class="w-layout-default-pageheader">
+    <a-breadcrumb class="w-layout-default-pageheader-breadcrumb" :routes="breadcrumbRoutes">
+      <template #itemRender="{ route }">
+        {{ route.title }}
       </template>
     </a-breadcrumb>
-  </div> -->
+    <h2 v-if="title" class="w-layout-default-pageheader-title">
+      {{ title }}
+    </h2>
+  </div>
 </template>
 
 <script lang="ts" src="./layout-default-pageheader.ts"></script>
