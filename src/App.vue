@@ -4,4 +4,6 @@
   <router-view />
 </template>
 
-<style lang="scss" src="./utils/use/style/base.scss"></style>
+<style lang="scss">
+@import '@fe6/water-use/style/base.scss'
+</style>

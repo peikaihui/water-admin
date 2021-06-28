@@ -19,9 +19,10 @@
     "lib": ["esnext", "dom"],
     "types": ["vite/client", "node"],
     "paths": {
-      "@@*": ["src/*"]
+      "@@*": ["src/*"],
+      "@fe6/water-use": ["node_modules/@fe6/water-use/src/*"],
     }
   },
-  "include": ["constant/*.ts", "src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "include": ["node_modules/@fe6/water-use/src/**/*.ts", "node_modules/@fe6/water-use/src/**/*.tsx", "node_modules/@fe6/water-use/src/**/*.vue", "constant/*.ts", "src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "exclude": ["node_modules", "dist", "**/*.js"]
 }

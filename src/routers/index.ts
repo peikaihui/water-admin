@@ -1,11 +1,12 @@
 import type { RouteRecordRaw } from 'vue-router';
 
 // NOTE water/use
-import type { AppRouteRecordRaw } from '@@utils/use/routers/types';
-import waterRouter from '@@utils/use/routers';
+// import type { AppRouteModule } from '@fe6/water-use/src/index';
+import type { AppRouteRecordRaw } from '@fe6/water-use/src/index';
+import waterRouter from '@fe6/water-use/routers';
 
 import { basicRoutes } from '@@routers/configs';
-export { setupRouter } from '@@utils/use/routers';
+export { setupRouter } from '@fe6/water-use/routers';
 
 // 默认路由的导入
 basicRoutes.forEach((route: AppRouteRecordRaw) => {
