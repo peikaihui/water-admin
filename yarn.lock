@@ -597,10 +597,10 @@
     sortablejs "^1.13.0"
     vue-types "^3.0.0"
 
-"@fe6/water-pro@^3.0.30":
-  version "3.0.30"
-  resolved "https://registry.nlark.com/@fe6/water-pro/download/@fe6/water-pro-3.0.30.tgz?cache=0&sync_timestamp=1624894115254&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40fe6%2Fwater-pro%2Fdownload%2F%40fe6%2Fwater-pro-3.0.30.tgz#f4010fc478026a59388c2463ed459f60e50e6c4c"
-  integrity sha1-9AEPxHgCalk4jCRj7UWfYOUObEw=
+"@fe6/water-pro@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.nlark.com/@fe6/water-pro/download/@fe6/water-pro-3.1.0.tgz?cache=0&sync_timestamp=1624936545313&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40fe6%2Fwater-pro%2Fdownload%2F%40fe6%2Fwater-pro-3.1.0.tgz#971d6c0b040047d77ad3f64f410e377dfbb476aa"
+  integrity sha1-lx1sCwQAR9d60/ZPQQ43ffu0dqo=
   dependencies:
     "@ant-design-vue/use" "^0.0.1-0"
     "@ant-design/icons-vue" "^6.0.0"
