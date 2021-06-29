@@ -6,13 +6,13 @@ import { viteMockServe } from 'vite-plugin-mock';
 
 export function configMockPlugin(isBuild: boolean) {
   return viteMockServe({
-    ignore: /^\_/,
+    ignore: /^mock\-/,
     mockPath: 'mock',
     // showTime: true,
     localEnabled: !isBuild,
     prodEnabled: false,
     injectCode: `
-      import { setupProdMockServer } from '../mock/_mock-servicer.ts';
+      import { setupProdMockServer } from '../mock/mock-servicer.ts';
       setupProdMockServer();
       `,
   });

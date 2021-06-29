@@ -1,8 +1,8 @@
 /** @format */
 
 // NOTE water/use
-import type { AppRouteModule } from '@@utils/use/routers/types';
-import { LAYOUT_DEF, LAYOUT_BOX } from '@@utils/use/routers/constant';
+import type { AppRouteModule } from '@fe6/water-use/src/index';
+import { LAYOUT_DEF, LAYOUT_BOX } from '@fe6/water-use/routers/constant';
 
 const test1Page: AppRouteModule = {
   path: '/test1',
@@ -19,7 +19,15 @@ const test1Page: AppRouteModule = {
           meta: {
             title: '测试1',
           },
-          component: () => import('@@views/Test.vue'),
+          component: () => import('@@views/TestContent.vue'),
+        },
+        {
+          path: 'test4',
+          name: 'Test4View',
+          meta: {
+            title: '店铺主页',
+          },
+          component: () => import('@@views/TestContent.vue'),
         },
       ],
       component: LAYOUT_BOX,

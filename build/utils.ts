@@ -16,6 +16,8 @@ export interface ViteEnv {
   VITE_USE_IMAGEMIN: boolean;
   VITE_USE_AUTH: boolean;
   VITE_USE_MOCK: boolean;
+  VITE_MENU_ACTIVE: string;
+  VITE_BASE_HOME: string;
   VITE_REPORT: boolean;
   VITE_API: string;
   VITE_PUBLIC_PATH: string;
